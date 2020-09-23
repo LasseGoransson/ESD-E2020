@@ -1,0 +1,78 @@
+\usepackage[headheight=14pt, top=0.5cm, bottom=0.5cm, left=.5cm, right=.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{transparent}
+\usepackage{xifthen}
+\usepackage{import}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[final]{pdfpages}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\setboolean{@twoside}{false}
+\pdfminorversion=7
+\setlength\parindent{0pt}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\lec}[1]{
+\vspace{4pt}
+    \\
+    \huge{
+    \begin{center}
+Lecture #1
+    \end{center}
+}
+\vspace{4pt}
+\normalsize
+\\
+}
+
+\definecolor{Mycolor2}{HTML}{3F92D2}
+
+\surroundwithmdframed[
+    hidealllines=true,
+    backgroundcolor=gray!10,
+    skipbelow=\baselineskip,
+    skipabove=\baselineskip
+]{equation}
+\surroundwithmdframed[
+    hidealllines=true,
+    backgroundcolor=gray!10,
+    skipbelow=\baselineskip,
+    skipabove=\baselineskip
+]{equation*}
+\surroundwithmdframed[
+    hidealllines=true,
+    backgroundcolor=gray!10,
+    skipbelow=\baselineskip,
+    skipabove=\baselineskip
+]{align*}
+\surroundwithmdframed[
+    hidealllines=true,
+    backgroundcolor=gray!10,
+    skipbelow=\baselineskip,
+    skipabove=\baselineskip
+]{align}
+
+\renewcommand{\section}[1]{%
+    \vspace*{4pt}%Space before
+    \Large\sf\bf%
+    \setlength{\fboxsep}{0cm}%already boxed
+    \colorbox{orange!90}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{4pt}%Space before
+            \hspace*{1pt}
+            \color{white!80!black!20}
+            #1
+            \vspace*{4pt}%Space after
+        \end{minipage}%
+    }
+    \vspace*{4pt}%Space before
+    \normalsize
+    \normalfont
+}
+\newcommand\deff{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+

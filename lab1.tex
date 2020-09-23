@@ -19,27 +19,29 @@
 
 
 \section{Requirements}
-\begin{table}[htpb]
+\begin{table}[h]
     \centering
-    \begin{tabular}{lllll}
+    \begin{tabular}{l|l|l|l|l}
         Id& Description  & Evaluation  & Analysis & Test\\
         \hrule
-        & Optional Receipt for customer &&& \\
-        & Cashier needs to verify customer after restricted item is scanned&&&\\
-        & Only verify once per transaction &&& \\
-        & Do not accept foreign currency &&& \\
-        & Ethernet zmq - for communication with server &&& \\
-        & Customer display - Item scanned now, quantity, price total &&& \\\
-        & Receipt and total cost &&& \\
-        & Receipt is a object requested from server &&& \\
-        & Muliplier button for the cashier &&& \\
-        & Scalable &&& \\
+        & Able to register items & Input test  && \\
+        & Optional receipt for customer & Input test && \\
+        & Cashier needs to immediately verify eligibility after first restricted item  & Functional inspection&&\\
+        & Cashier must be able to modify registered item and quantity & Input test&& \\
+        & Query Item IDs, Prices from central box  & Functional inspection&& \\
+        & Communication with central box using Ethernet zeroMQ & Integration test && \\
+        & Customer Display - Item scanned now, quantity, price total & Functional test&& \\
+        & Cashier Display  - Line items, Total Cost, Transaction ID & Functional test&&\\ 
+        & Scalable up to 50 stations &Design inspection&& \\
+        & System can handle payment using credit card & Input test&& \\
+        & System can handle payment using cash & Input test&& \\
+        & Cashier can cancel transaction & Functional test && \\
+        & Customer is able to return items & Functional test&& \\
 
     \end{tabular}
     \caption{caption}
     \label{tab:label}
 \end{table}
-
 
 
 \end{document}
