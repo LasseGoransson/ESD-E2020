@@ -43,6 +43,74 @@
     \label{tab:label}
 \end{table}
 
+\section*{Lecture 6 - Requirements as Presented in the Class}%
+\label{sec:lecture_6_requirements_as_presented_in_the_class}
+
+\subsection*{Requirements as shown to the class}%
+
+\begin{enumerate}
+	\item Scan 2 items per second.
+	\item Scaleable up to 50 stations.
+	\item Pay by cash or card.
+	\item Transaction cancellation.
+	\item zmq use for communication (port and ip). No the exact server, merely the interface.
+	\item Info for customer on customer display.
+		\begin{itemize}
+			\item Total at the end.
+			\item Current total.
+			\item Current item.
+		\end{itemize}
+	\item Cash tracking (number fo sales).
+	\item optional receipt printing
+		\begin{itemize}
+			\item A simple item is a item representation with only the most necessary information. (id,name,barcode).
+			\item We should be able to make a new receipt ( \texttt{ newReceipt() } ).
+			\item Complete transaction by printing the receipt \texttt{ completeTransaction() }.
+			\item We need to be able to access the receipt in different contexts \texttt{getRecipt()}.
+			\item \texttt{getPaymentStatus()} show us the status, either it is \texttt{payed()} or \texttt{canceled()}, these returns strings verifying the
+				information from the database.
+		\end{itemize}
+	\item Use data base interface.
+	\item Employee screen. 
+		\begin{itemize}
+			\item Active receipt.
+			\item Current/final total.
+		\end{itemize}
+	\item Possibility of returning item/items. Policy/Protocol:
+		\begin{itemize}
+			\item 30 day limitation.
+			\item Requires receipt.
+			\item Time stamp in receipt.
+		\end{itemize}
+	\item Make it user friendly (When you can scan one item, a multiplier can be added
+		in order to not scan i.e 100 bananas). We should add shortcuts for tedious 
+		tasks in the system.
+	\item Edit receipt.
+	\item USER FRIENDLY!
+	\item Special item alert - Notifying when special items are being scanned by the system.
+	\item Acceptable wrong info: Name, price. We assume that the barcode always is correct. The barcode is ground truth.
+	\item Query item data. Meaning the customer wants the price of some product, maybe it is not shown on the shelf.
+	\item Luha algorithm for credit card validation.
+	\item Reboot station functionality for simple maintenance, done by the employee.
+	\item Any receipt size, which regards to the number of items in a transaction - a must.
+	\item USB for barcode scanner, card swiper, customer display.
+	\item A visual representation of the system in form of diagrams.
+\end{enumerate}
+
+Amount of stock is not up for us.
+\\ \\
+
+Return item Protocol:
+\begin{enumerate}
+	\item Customer provides receipt
+	\item The employee should input the receipt id. 
+	\item The system checks the id to verify the time stamp etc. This is done on the
+		station box.
+	\item How to represent the returning phenomenon in the system,
+		a negative buy? Return items class as mentioned by Aske.
+\end{enumerate}
+
+
 
 \end{document}
 
